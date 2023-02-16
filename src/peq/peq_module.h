@@ -7,14 +7,15 @@
 
 #include "somm22.h"
 
-#include <list>
+#include <set>
 #include <stdio.h>
 
 namespace somm22
 {
     namespace peq
     {
-        extern std::list<Event> peq;
+        uint32_t actualTime;
+        extern std::set<Event> peq;
     }
 }
 

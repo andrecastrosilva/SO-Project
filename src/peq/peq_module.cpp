@@ -25,7 +25,7 @@ namespace somm22
         soProbe(301, "%s()\n", __func__);
 
         /* replace with your code */
-        
+        throw Exception(ENOSYS, __func__);
     }
 
 }

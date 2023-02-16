@@ -17,7 +17,7 @@ namespace somm22
         struct processData {
             uint32_t pid;
             uint32_t arrivalTime;
-            std::vector<uint32_t> burstProfile;
+            std::vector<double> burstProfile;
             uint32_t currentState;
         };
 
