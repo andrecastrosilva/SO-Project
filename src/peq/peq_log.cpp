@@ -1,5 +1,5 @@
 /*
- *  \author ...
+ *  \author ... só iterar
  */
 
 #include "somm22.h"

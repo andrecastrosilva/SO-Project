@@ -15,7 +15,7 @@ namespace somm22
     namespace peq
     {
         uint32_t actualTime;
-        extern std::set<Event> peq;
+        extern std::list<Event> peq;
     }
 }
 
