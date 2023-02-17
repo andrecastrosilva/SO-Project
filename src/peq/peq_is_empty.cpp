@@ -6,9 +6,7 @@
 #include "peq_module.h"
 
 #include <stdint.h>
-
-#include <string>
-#include <regex>
+#include <bits/stdc++.h>
 
 namespace somm22
 {
@@ -16,8 +14,7 @@ namespace somm22
     {
         soProbe(303, "%s()\n", __func__);
 
-        /* replace with your code */
-        throw Exception(ENOSYS, __func__);
+        return peq::peq.empty();
     }
 }
 

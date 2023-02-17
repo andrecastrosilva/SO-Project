@@ -18,11 +18,13 @@ namespace somm22
         /* replace with your code */
         std::list<Event>::iterator selected = peq::peq.end();
             for (std::list<Event>::iterator it = peq::peq.begin() ; it != peq::peq.end(); ++it){
-                if (it->time)
-                {
+                if(selected == peq::peq.end()){
+                        selected = it;
+                }else if (it->time > selected->time){
+                    selected = it;
+
                     break;
                 }
-                
             }
 
             if(selected == peq::peq.end()){

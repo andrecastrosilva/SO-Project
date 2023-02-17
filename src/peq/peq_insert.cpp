@@ -7,6 +7,7 @@
 
 #include <stdint.h>
 #include "time.h"
+#include <bits/stdc++.h>
 
 namespace somm22
 {
@@ -26,12 +27,17 @@ namespace somm22
         if (pid == 0)
             throw Exception(EINVAL, __func__);
 
-        /*if (time <= getCurrentTime());
-            throw Exception(EINVAL, __func__);*/
+        if (time <= peq::currentTime);
+            throw Exception(EINVAL, __func__);
 
         Event ev = {time, type, pid};
-        peq::peq.push_back(ev);
-        
+
+        for (auto it = peq::peq.begin() ; it != peq::peq.end(); ++it){
+            if (it->time > ev.time){
+                peq::peq.insert(it, ev);
+                return;
+            }
+        }
     }
 }
 
