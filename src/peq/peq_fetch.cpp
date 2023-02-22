@@ -1,5 +1,5 @@
 /*
- *  \author ... retirar o begin depois de o tirar
+ *  \author ... 
  */ 
 
 #include "somm22.h"

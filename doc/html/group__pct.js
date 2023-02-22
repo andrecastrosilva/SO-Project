@@ -1,9 +1,9 @@
 var group__pct =
 [
-    [ "pctInit", "group__pct.html#ga56c221ecc37a96cff6c4b35cf0974321", null ],
-    [ "pctLoad", "group__pct.html#ga0f39eeff3bb31ac3d9b17a5080113c62", null ],
-    [ "pctLog", "group__pct.html#ga5f16eea0b0fa485c374d606ffde26d53", null ],
-    [ "pctGetNextBurstDuration", "group__pct.html#gae26a67b8f64b5ae5c78e693a0c1bcac4", null ],
-    [ "pctGetState", "group__pct.html#ga0d8b0d9b6cba8fa09a197d9deb1db7dc", null ],
-    [ "pctSetState", "group__pct.html#ga7ff7b6e15bcbe824b30c4c5f767eb102", null ]
+    [ "somm22::pctInit", "group__pct.html#gafe4f7a73f6b744d44942a8d1b29b7020", null ],
+    [ "somm22::pctLoad", "group__pct.html#ga61b311e3897dd83ecfe3573675d965d1", null ],
+    [ "somm22::pctLog", "group__pct.html#gae2448203078d65b6946136a91c87f4ec", null ],
+    [ "somm22::pctGetNextBurstDuration", "group__pct.html#ga2386789e78b54dd7e86cb9599e7455df", null ],
+    [ "somm22::pctGetState", "group__pct.html#gadfbb97aef5f542ff021f07762ef7acbf", null ],
+    [ "somm22::pctSetState", "group__pct.html#ga89f7df62b5ab3ea415ced56c92cdb7fb", null ]
 ];

@@ -23,6 +23,7 @@ add_subdirectory(peq)
 
 set(targets
     main
+    main2
 )
 
 foreach (target ${targets})
