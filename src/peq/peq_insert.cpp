@@ -6,8 +6,6 @@
 #include "peq_module.h"
 
 #include <stdint.h>
-#include "time.h"
-#include <bits/stdc++.h>
 
 namespace somm22
 {

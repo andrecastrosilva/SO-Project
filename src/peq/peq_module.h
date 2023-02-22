@@ -14,7 +14,6 @@ namespace somm22
 {   
     namespace peq
     {
-        uint32_t currentTime;
         extern std::list<Event> peq;
     }
 }

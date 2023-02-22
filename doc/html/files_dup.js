@@ -1,4 +1,10 @@
 var files_dup =
 [
-    [ "include", "dir_d44c64559bbebec7f509842c48db8b23.html", "dir_d44c64559bbebec7f509842c48db8b23" ]
+    [ "dbc.h", "dbc_8h.html", "dbc_8h" ],
+    [ "exception.h", "exception_8h_source.html", null ],
+    [ "log.h", "log_8h_source.html", null ],
+    [ "pct.h", "pct_8h_source.html", null ],
+    [ "peq.h", "peq_8h_source.html", null ],
+    [ "probing.h", "probing_8h_source.html", null ],
+    [ "somm22.h", "somm22_8h_source.html", null ]
 ];

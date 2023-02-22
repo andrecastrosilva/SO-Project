@@ -4,10 +4,7 @@
 
 #include "somm22.h"
 #include "peq_module.h"
-
-#include <stdint.h>
-#include <bits/stdc++.h>
-#include <string>
+#include "string"
 
 namespace somm22
 {
@@ -16,32 +13,26 @@ namespace somm22
         soProbe(305, "%s()\n", __func__);
 
         /* replace with your code */
-        std::list<Event>::iterator selected = peq::peq.end();
-            for (std::list<Event>::iterator it = peq::peq.begin() ; it != peq::peq.end(); ++it){
-                if(selected == peq::peq.end()){
-                        selected = it;
-                }else if (it->time > selected->time){
-                    selected = it;
-
-                    break;
-                }
-            }
-
-            if(selected == peq::peq.end()){
-                throw Exception(EINVAL, (std::string(__func__) + std::string(": No Event with that mask")).c_str());
-            }else{
-                Event rEvent = *selected;
-                peq::peq.erase(selected);
-                return rEvent;
-            }
+        std::list<Event>::iterator selected = peq::peq.begin();
+        if(selected == peq::peq.end()){
+            throw Exception(EINVAL, (std::string(__func__) + std::string(": No Event in peq list.")).c_str());
+        }else{
+            Event rEvent = *selected;
+            peq::peq.erase(selected);
+            return rEvent;
+        }
     }
-
 
     Event peqPeekNext()
     {
         soProbe(306, "%s()\n", __func__);
 
-        /* replace with your code */
-        throw Exception(ENOSYS, __func__);
+        std::list<Event>::iterator first = peq::peq.begin();
+        if(first == peq::peq.end()){
+            throw Exception(EINVAL, (std::string(__func__) + std::string(": No Event in peq list.")).c_str());
+        }else{
+            Event rEvent = *first;
+            return rEvent;
+        }
     }
 }

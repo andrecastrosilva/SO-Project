@@ -4,7 +4,6 @@
 
 #include "somm22.h"
 #include "peq_module.h"
-#include <bits/stdc++.h>
 
 namespace somm22
 {
