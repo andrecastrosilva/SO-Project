@@ -14,7 +14,6 @@
 
 namespace somm22
 {
-    bool ascending(uint32_t value1, uint32_t value2){return (pct::pct[value1].pid<pct::pct[value2].pid);}
 
     void pctLog()
     {
@@ -30,10 +29,9 @@ namespace somm22
         for (auto i = pct::pct.begin(); i != pct::pct.end(); i++){
             keys.push_back(i->first);
         }
-        std::sort(keys.begin(), keys.end(), ascending);
         
         for (uint32_t i = 0; i<keys.size(); i++){
-            logPrint("| %17d | %23d | %23d | \n", pct::pct[keys[i]].pid, pct::pct[keys[i]].arrivalTime, pct::pct[keys[i]].burstProfile);
+            logPrint("| %15d | %21d | %22d | \n", pct::pct[keys[i]].pid, pct::pct[keys[i]].arrivalTime, pct::pct[keys[i]].burstProfile);
         }
         logPrint("+==================================================================+\n\n");
     }

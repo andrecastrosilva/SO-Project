@@ -191,7 +191,4 @@ pct/CMakeFiles/pct.dir/pct_load.cpp.o: \
  /usr/include/c++/8/bits/regex_compiler.tcc \
  /usr/include/c++/8/bits/regex.h /usr/include/c++/8/bits/regex.tcc \
  /usr/include/c++/8/bits/regex_executor.h \
- /usr/include/c++/8/bits/regex_executor.tcc /usr/include/c++/8/fstream \
- /usr/include/x86_64-linux-gnu/c++/8/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/8/bits/c++io.h \
- /usr/include/c++/8/bits/fstream.tcc /usr/include/c++/8/iostream
+ /usr/include/c++/8/bits/regex_executor.tcc
