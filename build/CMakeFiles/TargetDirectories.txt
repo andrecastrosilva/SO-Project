@@ -1,0 +1,13 @@
+/home/nunomatos07/Desktop/SO-Project/build/CMakeFiles/main.dir
+/home/nunomatos07/Desktop/SO-Project/build/CMakeFiles/main2.dir
+/home/nunomatos07/Desktop/SO-Project/build/CMakeFiles/edit_cache.dir
+/home/nunomatos07/Desktop/SO-Project/build/CMakeFiles/rebuild_cache.dir
+/home/nunomatos07/Desktop/SO-Project/build/core/CMakeFiles/core.dir
+/home/nunomatos07/Desktop/SO-Project/build/core/CMakeFiles/edit_cache.dir
+/home/nunomatos07/Desktop/SO-Project/build/core/CMakeFiles/rebuild_cache.dir
+/home/nunomatos07/Desktop/SO-Project/build/pct/CMakeFiles/pct.dir
+/home/nunomatos07/Desktop/SO-Project/build/pct/CMakeFiles/edit_cache.dir
+/home/nunomatos07/Desktop/SO-Project/build/pct/CMakeFiles/rebuild_cache.dir
+/home/nunomatos07/Desktop/SO-Project/build/peq/CMakeFiles/peq.dir
+/home/nunomatos07/Desktop/SO-Project/build/peq/CMakeFiles/edit_cache.dir
+/home/nunomatos07/Desktop/SO-Project/build/peq/CMakeFiles/rebuild_cache.dir

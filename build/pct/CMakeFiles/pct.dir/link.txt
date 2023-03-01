@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/nunomatos07/Desktop/SO-Project/lib/libpct.a CMakeFiles/pct.dir/pct_module.cpp.o CMakeFiles/pct.dir/pct_load.cpp.o CMakeFiles/pct.dir/pct_log.cpp.o CMakeFiles/pct.dir/pct_get_set.cpp.o
+/usr/bin/ranlib /home/nunomatos07/Desktop/SO-Project/lib/libpct.a

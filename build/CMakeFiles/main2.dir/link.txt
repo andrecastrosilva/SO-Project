@@ -1,0 +1,1 @@
+/usr/bin/c++  -ggdb -Wall -D_FILE_OFFSET_BITS=64 -rdynamic CMakeFiles/main2.dir/main2.cpp.o -o /home/nunomatos07/Desktop/SO-Project/bin/main2  -static -Wl,--start-group /home/nunomatos07/Desktop/SO-Project/lib/libcore.a /home/nunomatos07/Desktop/SO-Project/lib/libpct.a /home/nunomatos07/Desktop/SO-Project/lib/libpeq.a -Wl,--end-group 

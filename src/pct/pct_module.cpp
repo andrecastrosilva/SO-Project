@@ -13,7 +13,7 @@ namespace somm22
         std::map<uint32_t, processData> pct = std::map<uint32_t , processData>();
     }
 
-    void pctInit(const char* fname) 
+    void pctInit() 
     {
         soProbe(201, "%s()\n", __func__);
 

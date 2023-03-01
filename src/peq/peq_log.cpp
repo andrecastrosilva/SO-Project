@@ -14,7 +14,7 @@ namespace somm22
         logPrint("+===============================+\n");
         logPrint("|      Process Event Queue      |\n");
         logPrint("+-----------+-----------+-------+\n");
-        logPrint("| Time | Type |  PID  |\n");
+        logPrint("|    Time   |    Type   |  PID  |\n");
         logPrint("+-----------+-----------+-------+\n");
 
         for (Event e : peq::peq){ 

@@ -12,7 +12,7 @@
 #include <cstdio>   // for scanf()
 #include <vector>
 #include <fstream>  // for std::ifstream
-
+#include <iostream> // for std::cout
 
 
 namespace somm22
@@ -21,46 +21,49 @@ namespace somm22
     {
         soProbe(203, "%s(\"%s\")\n", __func__, fname);
 
+        
+
         /* replace with your code */
-        std::string line;
-        std::ifstream in_file;
-        in_file.open(fname);
-        if(in_file.is_open()){
+        
+            FILE* fin = fopen(fname, "r");
 
-            size_t line_val = 0;
+            if(fin == NULL){
+                throw Exception(EINVAL, (std::string(__func__) + std::string(" Invalid file: ") + std::string(fname)).c_str());
+            }
 
-            while (std::getline(in_file, line)){
-
-                line_val++;
+            char* line=NULL;
+            size_t sz =0;
+            
+            while (getline(&line, &sz, fin) != 0){
 
                 //remove comments
                 int commentPosition = -1;
-                if (sscanf(line.c_str(), "%*[^\n]#%n", &commentPosition) == 1) {
+                char* line= strdup(line);
+                if (sscanf(line, "%*[^\n]#%n", &commentPosition) == 1) {
                     line.erase(commentPosition);
                 }
                 if (commentPosition == 0) {
                     continue;
                 }
-
+                
                 // remove spaces
-                line.erase(std::remove_if(line.begin(), line.end(), ::isspace), line.end());
-
+                line.erase(std::remove_if(line, line.end(), ::isspace), line.end());
                 // find all ";" positions
                 std::vector<int> positions;
-                int position;
-                while (scanf("%*[^;]%n", &position) == 1) {
-                    positions.push_back(position);
-                    line[position] = ' ';
-                    scanf("%*c");
+                for(size_t i=0;i<line.length();i++){
+                    if(line[i] == ';')
+                        positions.push_back(i);
                 }
+                
 
 
                 uint32_t pid;
                 uint32_t arrivalTime;
                 std::vector<double> burstProfile;
 
-                if (sscanf(line.c_str(), "%u%u%u", &pid, &arrivalTime, &burstProfile) != 3 ){
+                if (sscanf(line.c_str(), "%u ;%u ;%g", &pid, &arrivalTime, &burstProfile) != 3 ){
                     throw Exception(EINVAL, (std::string(__func__) + std::string(" Invalid line: ") + std::to_string(line_val)).c_str());
+                    std::cout << "Test \n";
                 }   
 
                 pid = (uint32_t)std::stoi(line.substr(0 , positions[0]));
@@ -71,13 +74,8 @@ namespace somm22
                 pct::pct.insert(std::pair<int, pct::processData>(pid, {pid, arrivalTime, burstProfile}));
 
             }
-            
-        }else{
-                throw Exception(EIO,"Error opening the file");
-        }
         in_file.close();
 
     }
-
 } // end of namespace somm22
 

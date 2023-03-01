@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/nunomatos07/Desktop/SO-Project/lib/libcore.a CMakeFiles/core.dir/exception.cpp.o CMakeFiles/core.dir/probing.cpp.o CMakeFiles/core.dir/log.cpp.o
+/usr/bin/ranlib /home/nunomatos07/Desktop/SO-Project/lib/libcore.a

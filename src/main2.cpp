@@ -17,11 +17,6 @@
 #include <iostream>
 #include <map>
 
-#include "pct_module.h"
-#include "pct_module.h"
-#include "peq_module.h"
-
-
 #include "somm22.h"
 
 
@@ -173,9 +168,16 @@ int main(int argc, char *argv[])
         }
     }
 
-    // run the program and try functions init, load and log
 
+    pctInit();
+    pctLoad("../examples/p1.txt");
+    pctLog();  
+
+    /* 
+    std::cout << "abc \n";
+
+    peqInit();
+    peqLog();
     
-
-}
-
+    */
+}  
