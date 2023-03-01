@@ -20,10 +20,10 @@ namespace somm22
         soProbe(202, "%s()\n", __func__);
 
         logPrint("+==================================================================+\n");
-        logPrint("|                   Process Control Table                          |\n");
-        logPrint("+-----------------+-----------------------+------------------------+\n");
-        logPrint("|       PID       |      arrivalTime      |      burstProfile      |\n");
-        logPrint("+-----------------+-----------------------+------------------------+\n");
+        logPrint("|                     Process Control Table                        |\n");
+        logPrint("+-----------------+---------------------+--------------------------+\n");
+        logPrint("|       PID       |     arrivalTime     |       burstProfile       |\n");
+        logPrint("+-----------------+---------------------+--------------------------+\n");
         
         std::vector<uint32_t> keys;
         for (auto i = pct::pct.begin(); i != pct::pct.end(); i++){
@@ -31,9 +31,14 @@ namespace somm22
         }
         
         for (uint32_t i = 0; i<keys.size(); i++){
-            logPrint("| %15d | %21d | %22d | \n", pct::pct[keys[i]].pid, pct::pct[keys[i]].arrivalTime, pct::pct[keys[i]].burstProfile);
+            std::ostringstream burstProfileStr;
+            for (auto burst : pct::pct[keys[i]].burstProfile) {
+                burstProfileStr << std::fixed << std::setprecision(1) << burst << " ";
+            }
+            logPrint("| %15d | %19d | %25s|\n", pct::pct[keys[i]].pid, pct::pct[keys[i]].arrivalTime, burstProfileStr.str().c_str());
         }
         logPrint("+==================================================================+\n\n");
     }
 
 } // end of namespace somm22
+  

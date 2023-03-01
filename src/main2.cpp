@@ -170,7 +170,7 @@ int main(int argc, char *argv[])
 
 
     pctInit();
-    pctLoad("../examples/p1.txt");
+    pctLoad("../examples/p2.txt");
     pctLog();  
 
     /* 

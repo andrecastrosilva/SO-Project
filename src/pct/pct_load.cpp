@@ -10,6 +10,7 @@
 #include <string>
 #include <regex>
 #include <vector>
+#include <math.h>
 
 
 namespace somm22
@@ -33,7 +34,6 @@ namespace somm22
             char* new_line=NULL;
             
             while (getline(&line, &sz, fin) != -1){
-                
                 //remove spaces
                 new_line = line;
                 while(*new_line != '\0'){
@@ -51,7 +51,8 @@ namespace somm22
                 int commentPosition = -1;
                 for(size_t i=0;i<strlen(line);i++)
                 {
-                    if(line[0] == '#') commentPosition = i;
+                    if(!isdigit(line[0])) commentPosition = i;
+                    
                     break;
                 }
                 if(commentPosition == -1){
@@ -70,6 +71,9 @@ namespace somm22
                     size_t field_length = strlen(line) - start_pos;
                     std::string field(line + start_pos, field_length);
                     fields.push_back(field);
+
+                    //check size of fields == 3
+                    if(fields.size() != 3) throw Exception(EINVAL, (std::string(__func__) + std::string(" Invalid file: ") + std::string(fname)).c_str());
 
                     //separate fiels[2] by ","
                     std::vector<std::string> fields2;
@@ -97,9 +101,14 @@ namespace somm22
                     for(size_t i=0;i<fields2.size();i++){
                         burstProfile.push_back(std::stod(fields2[i]));
                     }
+
+                    if(pct::pct.count(pid) > 0) throw Exception(EINVAL, (std::string(__func__) + std::string(" This pid aldready exists")).c_str());
+
+                    //add to pct
+                    pct::pct[pid].pid = pid;
+                    pct::pct[pid].arrivalTime = arrivalTime;
                     
                     /*
-                    printf("pid: %d,   arrivalTime: %d: ", pid, arrivalTime);
                     printf("burstProfile: ");
                     for(size_t i=0;i<burstProfile.size();i++){
                         printf("%g ", burstProfile[i]);
@@ -107,14 +116,13 @@ namespace somm22
                     printf("\n");
                     */
 
-                    //add to pct
-                    pct::pct[pid].pid = pid;
-                    pct::pct[pid].arrivalTime = arrivalTime;
                     //add burstProfile
                     for(size_t k=0;k<burstProfile.size();k++){
+                        
                         pct::pct[pid].burstProfile.push_back(burstProfile[k]);
+                        //printf("%lu\n", pct::pct[pid].burstProfile.size());
                     }
-                    
+
                 }else{
                     continue;
                 }
