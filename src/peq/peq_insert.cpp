@@ -6,6 +6,7 @@
 #include "peq_module.h"
 
 #include <stdint.h>
+#include <algorithm>
 
 namespace somm22
 {
@@ -15,17 +16,21 @@ namespace somm22
 
         if (pid == 0)
             throw Exception(EINVAL, __func__);
-
-        //If time is not in the future, the EINVAL exception must be thrown.
-
-        Event ev = {time, type, pid};
-
-        for (auto it = peq::peq.begin() ; it != peq::peq.end(); ++it){
-            if (it->time > ev.time){
-                peq::peq.insert(it, ev);
-                return;
+        
+        //check if the event is already in the queue
+        for (Event e : peq::peq){
+            if (e.pid == pid && e.type == type){
+                throw Exception(EINVAL, "Event already in the queue");
             }
         }
-        throw Exception(EINVAL, __func__);
+
+        Event evento = {time , type , pid};
+            
+            try{
+                auto it = std::upper_bound(peq::peq.begin(), peq::peq.end(), evento, [](Event a, Event b) -> bool{return a.time < b.time;});
+                peq::peq.insert(it, evento);
+            } catch(std::exception& e){
+                throw Exception(EINVAL, __func__);
+            }
     }
 }

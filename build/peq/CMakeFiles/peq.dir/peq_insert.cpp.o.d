@@ -94,4 +94,10 @@ peq/CMakeFiles/peq.dir/peq_insert.cpp.o: \
  /usr/include/c++/8/ext/alloc_traits.h \
  /usr/include/c++/8/bits/alloc_traits.h \
  /usr/include/c++/8/bits/allocated_ptr.h \
- /usr/include/c++/8/ext/aligned_buffer.h /usr/include/c++/8/bits/list.tcc
+ /usr/include/c++/8/ext/aligned_buffer.h /usr/include/c++/8/bits/list.tcc \
+ /usr/include/c++/8/algorithm /usr/include/c++/8/utility \
+ /usr/include/c++/8/bits/stl_relops.h /usr/include/c++/8/bits/stl_algo.h \
+ /usr/include/c++/8/bits/algorithmfwd.h \
+ /usr/include/c++/8/bits/stl_heap.h /usr/include/c++/8/bits/stl_tempbuf.h \
+ /usr/include/c++/8/bits/stl_construct.h \
+ /usr/include/c++/8/bits/uniform_int_dist.h /usr/include/c++/8/limits

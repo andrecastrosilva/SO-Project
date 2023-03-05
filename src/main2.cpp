@@ -173,11 +173,34 @@ int main(int argc, char *argv[])
     pctLoad("../examples/p2.txt");
     pctLog();  
 
-    /* 
-    std::cout << "abc \n";
-
     peqInit();
-    peqLog();
     
-    */
-}  
+    //check if peqIsEmpty
+    printf("Is empty: %s\n", peqIsEmpty() ? "true" : "false");
+    peqLog();
+
+    printf("Inserts\n");
+    peqInsert(ARRIVAL, 3, 222);
+    peqInsert(WAKEUP, 8, 111);
+    peqInsert(ARRIVAL, 23, 666);
+    peqInsert(BLOCK, 55, 444);
+    peqInsert(TERMINATE, 10, 333);
+    peqInsert(BLOCK, 23, 999);
+    //peqInsert(ARRIVAL, 32, 666);
+
+    peqLog();
+    //check if peqIsEmpty
+    printf("Is empty: %s\n", peqIsEmpty() ? "true" : "false");
+
+    //print peqPeekNext
+    printf("Peek next: TIME:%d TYPE:%s PID:%d\n", peqPeekNext().time, peqEventTypeAsString(peqPeekNext().type), peqPeekNext().pid);
+
+    //print peqFetchNext
+    Event e = peqFetchNext();
+    printf("Fetch next: TIME:%d TYPE:%s PID:%d\n", e.time, peqEventTypeAsString(e.type), e.pid);
+
+    //print peqPeekNext
+    printf("Peek next: TIME:%d TYPE:%s PID:%d\n", peqPeekNext().time, peqEventTypeAsString(peqPeekNext().type), peqPeekNext().pid);
+
+    
+}

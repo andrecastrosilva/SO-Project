@@ -18,7 +18,7 @@ namespace somm22
         logPrint("+-----------+-----------+-------+\n");
 
         for (Event e : peq::peq){ 
-            logPrint("| %4d | %-4s | %5d |\n", e.time, peqEventTypeAsString(e.type), e.pid);
+            logPrint("| %9d | %-9s | %5d |\n", e.time, peqEventTypeAsString(e.type), e.pid);
         }
 
             logPrint("+===============================+\n\n");
